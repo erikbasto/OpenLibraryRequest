@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PeticionOpenLibrary" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ISBN: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TGC-hw-zc0">
+                                <rect key="frame" x="16" y="36" width="47" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Buscar.." textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="Qfl-NK-a2Z">
+                                <rect key="frame" x="16" y="79" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="search" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2eF-of-rE4">
+                                <rect key="frame" x="16" y="145" width="343" height="514"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="QFQ-Fp-tU2">
+                                <rect key="frame" x="177.5" y="117" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="Qfl-NK-a2Z" secondAttribute="trailing" id="GDy-0D-eoG"/>
+                            <constraint firstItem="Qfl-NK-a2Z" firstAttribute="top" secondItem="TGC-hw-zc0" secondAttribute="bottom" constant="22" id="KWL-6U-FwU"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="TGC-hw-zc0" secondAttribute="leading" id="Orb-Ms-CGF"/>
+                            <constraint firstItem="2eF-of-rE4" firstAttribute="top" secondItem="Qfl-NK-a2Z" secondAttribute="bottom" constant="36" id="TjM-rA-AAF"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="Qfl-NK-a2Z" secondAttribute="leading" id="Udo-LX-j6Z"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="2eF-of-rE4" secondAttribute="bottom" constant="8" id="Uo9-Qu-J5C"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="2eF-of-rE4" secondAttribute="trailing" id="Zl8-rg-0zq"/>
+                            <constraint firstItem="QFQ-Fp-tU2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dhU-Hk-gad"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="2eF-of-rE4" secondAttribute="leading" id="dks-vU-pEL"/>
+                            <constraint firstItem="QFQ-Fp-tU2" firstAttribute="top" secondItem="Qfl-NK-a2Z" secondAttribute="bottom" constant="8" id="tzh-1Q-GRQ"/>
+                            <constraint firstItem="TGC-hw-zc0" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="16" id="w3B-02-eWg"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="QFQ-Fp-tU2" id="hvv-va-Xkh"/>
+                        <outlet property="isbnTextField" destination="Qfl-NK-a2Z" id="cAJ-zq-XX2"/>
+                        <outlet property="respondeTextView" destination="2eF-of-rE4" id="bEE-lT-EB5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
+        </scene>
+    </scenes>
+</document>
